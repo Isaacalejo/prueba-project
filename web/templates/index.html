@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+    <title>Data Service App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<section class="container">
+    <header class="nav text-left">
+        <span class="nav-item">
+            <img src="static/images/wwwIcon.png" width="50" height="50" alt="" class="mt-2">
+        </span>
+        <span class="nav-item">
+            <span class="display-5 mx-3">
+                Data Service App
+            </span>
+        </span>
+    </header>
+    <div class="row mt-4">
+        <section class="card shadow-lg p-3">
+            <div class="card-header">
+                <div class="card-title">
+                    Acceso al API
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item my-2">
+                        <img src="static/images/restApi.png" width="240" height="280" alt="" class="d-flex mx-auto">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Endpoint</th>
+                                    <th>Método</th>
+                                    <th>Payload</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>/data</td>
+                                    <td>GET</td>
+                                    <td><span>No Aplica</span></td>
+                                </tr>
+                                <tr>
+                                    <td>/data</td>
+                                    <td>POST</td>
+                                    <td><pre id="json">{"ticker": "msft", "start":"2017-01-01", "end": "2017-12-31"}</pre></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+</section>
+<script>
+    (function() {
+        var element = document.getElementById("json");
+        var obj = JSON.parse(element.innerText);
+        element.innerHTML = JSON.stringify(obj, undefined, 2);
+    })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
